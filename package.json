@@ -11,7 +11,7 @@
         "urls": "https://github.com/chenxu2656/noodlSnippets"
     },
     "homepage": "https://github.com/chenxu2656/noodlSnippets/README.md",
-    "version": "0.0.4",
+    "version": "0.0.5",
     "engines": {
         "vscode": "^1.59.0"
     },
