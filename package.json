@@ -1,11 +1,21 @@
 {
     "name": "noodl",
-    "displayName": "noodl",
-    "description": "noodl",
-    "version": "0.0.1",
+    "displayName": "Noodl Sinppets",
+    "description": "This is a code snippets for noodl!",
+    "publisher": "chenxu2656",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/chenxu2656/noodlSnippets"
+    },
+    "bugs": {
+        "urls": "https://github.com/chenxu2656/noodlSnippets"
+    },
+    "homepage": "https://github.com/chenxu2656/noodlSnippets/README.md",
+    "version": "0.0.3",
     "engines": {
         "vscode": "^1.59.0"
     },
+    "icon": "images/noodl.png",
     "categories": [
         "Snippets"
     ],
