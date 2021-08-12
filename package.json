@@ -26,8 +26,5 @@
                 "path": "./snippets/snippets.code-snippets"
             }
         ]
-    },
-    "scripts": {
-        "publish:patch": "vsce publish patch && git push"
     }
 }
