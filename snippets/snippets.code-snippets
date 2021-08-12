@@ -1,0 +1,274 @@
+{
+    /**
+    noodl ---> noodl strcuture
+    noodlList ---> list structure
+    noodlButton ---> button structure
+    noodlImg ---> image structure
+    noodlLabel ---> label structure
+    noodlTextField ---> textfield structure
+    noodlTextView --->  textview structure
+    noodlView --->  view structure
+    noodlScorllView ---> scrollview structure
+    press Tab button to change input position
+    **/
+    "set default noodl yaml structure": {
+        "prefix": "noodl1",
+        "body": [
+            "${1:Pagename}:",
+            "\tinit: #Page initialization",
+            "",
+            "\tdataTemp: #Input data temp here",
+            "",
+            "\tformData: #Input data here",
+            "",
+            "\tserverRequest: #Input data request here",
+            "",
+            "\tstyle: #Input style fragment here",
+            "",
+            "\tcomponents:",
+        ],
+        "description": "noodl frame"
+    },
+    "list": {
+        "prefix": "noodlList",
+        "body": [
+            "- type: list",
+            "\tcontentType: listObject",
+            "\tlistObject: ${1}",
+            "\titeratorVar: itemObject",
+            "\tstyle:",
+            "\t\twidth: '1'",
+            "\t\tmargin: '0'",
+            "\t\theight: auto",
+            "\tchildren:",
+            "\t\t- type: listItem",
+            "\t\t\titemObject: ",
+            "\t\t\tstyle:",
+            "\t\t\t\twidth: '1'",
+            "\t\t\t\theight: '${2}'",
+            "\t\t\t\tleft: '0'",
+            "\t\t\t\tmarginTop: '${3}'",
+            "\t\t\tchildren:",
+        ],
+        "description": "noodl list frame"
+    },
+    "button": {
+        "prefix": "noodlButton",
+        "body": [
+            "- type: button",
+            "\ttext: ${1}",
+            "\tstyle:",
+            "\t\t${2}",
+            "\t\ttextAlign:",
+            "\t\t\tx: center",
+            "\t\t\ty: center"
+        ],
+        "description": "noodl button frame"
+    },
+    "Image": {
+        "prefix": "noodlImg",
+        "body": [
+            "- type: image",
+            "\tpath: ${1}",
+            "\tstyle:",
+            "\t\t${2}"
+        ],
+        "description": "noodl image frame"
+    },
+    "Label": {
+        "prefix": "noodlLabel",
+        "body": [
+            "- type: label",
+            "\ttext: ${1}",
+            "\tdataKey: ${2}",
+            "\tstyle:",
+            "\t\t${3}"
+        ],
+        "description": "noodl label frame"
+    },
+    "textField": {
+        "prefix": "noodlTextField",
+        "body": [
+            "- type: textField",
+            "\tplaceholder: ${1:placeholder}",
+            "\tdataKey: ${2:datakey}",
+            "\tstyle:",
+            "\t\t${3}"
+        ],
+        "description": "noodl testField frame"
+    },
+    "textView": {
+        "prefix": "noodlTextView",
+        "body": [
+            "- type: textView",
+            "\tplaceholder: ${1:placeholder}",
+            "\tdataKey: ${2:datakey}",
+            "\tstyle:",
+            "\t\t${3}"
+        ],
+        "description": "noodl textView frame"
+    },
+    "view": {
+        "prefix": "noodlView",
+        "body": [
+            "- type: view",
+            "\tstyle:",
+            "\t\t${1}"
+        ],
+        "description": "noodl view frame"
+    },
+    "scrollView": {
+        "prefix": "noodlScrollView",
+        "body": [
+            "- type: scrollView",
+            "\tstyle:",
+            "\t\t${1}"
+        ],
+        "description": "noodl scrollView frame"
+    },
+    "判断两个字符串是否相等": {
+        "prefix": "noodlStringEqual",
+        "body": [
+            "- =.builtIn.string.equal:",
+            "\t\tdataIn:",
+            "\t\t\tstring1:$0",
+            "\t\t\tstring2:$1"
+        ],
+        "description": "判断两个字符串是否相等"
+    },
+    "清除缓存": {
+        "prefix": "noodlNonce",
+        "body": [
+            "- actionType: evalObject",
+            "\tobject:",
+            "\t\t.Global._nonce@:",
+            "\t\t\t=.builtIn.math.random: ''"
+        ],
+        "description": "清除缓存"
+    },
+    "刷新控件": {
+        "prefix": "noodlRedraw",
+        "body": [
+            "- actionType: builtIn",
+            "\tfuncName: redraw",
+            "\tviewTag: ${0}",
+        ],
+        "description": "刷新控件"
+    },
+    "alert弹框": {
+        "prefix": "noodlAlert",
+        "body": [
+            "- =.builtIn.utils.alert:",
+            "\t\tdataIn:",
+            "\t\t\tvalue: ${0}",
+        ],
+        "description": "alert弹框"
+    },
+    "popUp弹框":{
+        "prefix": "noodlPopUp",
+        "body": [
+            "- actionType: popUp",
+            "\tpopUpView: ${0}",
+        ],
+        "description": "popUp弹框"
+    },
+    "初始化evalObject":{
+        "prefix": "noodlEvalObject",
+        "body": [
+            "- actionType: evalObject",
+            "\tobject:",
+            "\t\t${0}"
+        ],
+        "description": "初始化evalObject"
+    },
+    "连接字符串":{
+        "prefix": "noodlConcat",
+        "body": [
+            "- =.builtIn.string.concat:",
+            "\t\tdataIn:",
+            "\t\t\t- ${0}",
+            "\t\tdataOut:${1}"
+        ],
+        "description": "连接字符串"
+    },
+    "根据位数改变二进制数字并返回十进制数":{
+        "prefix": "noodlInhx",
+        "body": [
+            "- =.builtIn.number.inhx:",
+            "\t\tdataIn:",
+            "\t\t\tintHex: ${0}",
+            "\t\t\tindex: ${1}",
+            "\t\t\thex: ${2}",
+            "\t\tdataOut:${3}"
+        ],
+        "description": "根据位数改变二进制数字并返回十进制数"
+    },
+    "切换jwt":{
+        "prefix": "noodlJwt",
+        "body": [
+            "- .Global.jwt.edge.bvid@: ${0}",
+            "- =.Global.jwt.edgeAPI.store: ${1}  ",
+        ],
+        "description": "切换jwt"
+    },
+    "动态更新页面":{
+        "prefix": "noodlPageReload",
+        "body": [
+            "- =.builtIn.goto:",
+            "\t\tdataIn:",
+            "\t\t\tdestination: ${0}",
+            "\t\t\tpageReload: true"
+        ],
+        "description": "动态更新页面"
+    },
+    "查询满足指定bit位数和数值并返回所有的二进制对应的十进制":{
+        "prefix": "noodlNumberHx",
+        "body": [
+            "- =.builtIn.number.hx:",
+            "\t\tdataIn:",
+            "\t\t\tiniLen: ${0}",
+            "\t\t\tlocalArr: ${1}",
+            "\t\t\tbinaryArr: ${2}",
+            "\t\tdataOut: ${3}"
+        ],
+        "description": "查询满足指定bit位数和数值并返回所有的二进制对应的十进制"
+    },
+    "改变docList的type并分享":{
+        "prefix": "noodlShareDocListByType",
+        "body": [
+            "- =.builtIn.ecos.shareDocListByType:",
+            "\t\tdataIn:",
+            "\t\t\tsourceDocList: ${0}",
+            "\t\t\ttype: ${1}",
+        ],
+        "description": "改变docList的type"
+    },
+    "显现组件":{
+        "prefix": "noodlShow",
+        "body": [
+            "- actionType: builtIn",
+            "\tfuncName: show",
+            "\tviewTag: ${0}",
+        ],
+        "description": "显现组件"
+    },
+    "隐藏组件":{
+        "prefix": "noodlHide",
+        "body": [
+            "- actionType: builtIn",
+            "\tfuncName: hide",
+            "\tviewTag: ${0}",
+        ],
+        "description": "隐藏组件"
+    },
+    "给数组中添加一项":{
+        "prefix": "noodlArrayAdd",
+        "body": [
+            "- =.builtIn.array.add:",
+            "\t\tdataIn:",
+            "\t\t\tobject: ${0}",
+            "\t\t\tvalue: ${1}",
+        ],
+        "description": "给数组中添加一项"
+    },
+}

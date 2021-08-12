@@ -1,0 +1,20 @@
+{
+    "name": "noodl",
+    "displayName": "noodl",
+    "description": "noodl",
+    "version": "0.0.1",
+    "engines": {
+        "vscode": "^1.59.0"
+    },
+    "categories": [
+        "Snippets"
+    ],
+    "contributes": {
+        "snippets": [
+            {
+                "language": "yaml",
+                "path": "./snippets/snippets.code-snippets"
+            }
+        ]
+    }
+}
